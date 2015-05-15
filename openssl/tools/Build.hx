@@ -217,8 +217,7 @@ class Build extends Builder
          copy(dir + "/" + link.src, "include/openssl/" + link.name);
 
       copy("buildfiles/openssl.xml", dir);
-	  trace(arch);
-	  if (target == "linux" && arch == "x86_64") runIn(".", "./Configure", ["linux-x86_64"]);
+	  if (target == "linux" && arch == "m64") runIn(".", "./Configure", ["linux-x86_64"]);
       runIn(dir, "haxelib", ["run", "hxcpp", "openssl.xml" ].concat(buildArgs));
    }
 
