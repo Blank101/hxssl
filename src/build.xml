@@ -12,6 +12,7 @@
 	<files id="files">
       <compilerflag value="-I../openssl/project/include/" />
       <compilerflag value="-I../openssl/project/include/openssl" />
+      <compilerflag value="-I../openssl/project/MacOS/" />
 		<file name="hxssl_ssl.cpp"/>
 		<file name="hxssl_md5.cpp"/>
 		<file name="hxssl_base64.cpp"/>
