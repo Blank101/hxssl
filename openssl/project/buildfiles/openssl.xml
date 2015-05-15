@@ -121,7 +121,6 @@
    <compilerflag value="-Icrypto/modes" />
    <compilerflag value="-I." />
    <compilerflag value="-IMacOS" if="mac" />
-   <compilerflag value="-DOPENSSL_NO_INLINE_ASM" if="mac" />
 
    <file name="crypto/cryptlib.c" />
    <file name="crypto/mem.c" />
