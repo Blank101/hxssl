@@ -35,7 +35,7 @@ class Build extends Builder
          return;
       }
       
-      buildSsl("1.0.2a", target, arch);
+      buildSsl("1.0.2a");
    }
 
    override public function cleanAll(inBuildFlags:Array<String>) : Bool
@@ -127,7 +127,7 @@ class Build extends Builder
       Sys.setCwd(oldPath);
    }
 
-   public function buildSsl(inVer:String, target:String, arch:String)
+   public function buildSsl(inVer:String)
    {
       var links = [
           {name:"aes.h", src:"crypto/aes/aes.h"},
@@ -183,6 +183,7 @@ class Build extends Builder
           {name:"rand.h", src:"crypto/rand/rand.h"},
           {name:"rc2.h", src:"crypto/rc2/rc2.h"},
           {name:"rc4.h", src:"crypto/rc4/rc4.h"},
+          {name:"rc4_locl.h", src:"crypto/rc4/rc4_locl.h"},
           {name:"ripemd.h", src:"crypto/ripemd/ripemd.h"},
           {name:"rsa.h", src:"crypto/rsa/rsa.h"},
           {name:"safestack.h", src:"crypto/stack/safestack.h"},
@@ -217,7 +218,6 @@ class Build extends Builder
          copy(dir + "/" + link.src, "include/openssl/" + link.name);
 
       copy("buildfiles/openssl.xml", dir);
-	  if (target == "linux" && arch == "m64") runIn(dir, "./Configure", ["linux-x86_64"]);
       runIn(dir, "haxelib", ["run", "hxcpp", "openssl.xml" ].concat(buildArgs));
    }
 
