@@ -183,7 +183,6 @@ class Build extends Builder
           {name:"rand.h", src:"crypto/rand/rand.h"},
           {name:"rc2.h", src:"crypto/rc2/rc2.h"},
           {name:"rc4.h", src:"crypto/rc4/rc4.h"},
-          {name:"rc4_locl.h", src:"crypto/rc4/rc4_locl.h"},
           {name:"ripemd.h", src:"crypto/ripemd/ripemd.h"},
           {name:"rsa.h", src:"crypto/rsa/rsa.h"},
           {name:"safestack.h", src:"crypto/stack/safestack.h"},
