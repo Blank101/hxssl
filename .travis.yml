@@ -1,6 +1,10 @@
 language: haxe
 
 sudo: false
+addons:
+  apt:
+    packages: &apt_common
+      - gcc
 
 matrix:
   include:
@@ -18,8 +22,10 @@ script:
       mv ndll/Mac64/hxssl.ndll ~/neko/;
     fi
   - cd test
+  # Build neko binary and test
   - haxe build-neko.hxml
   - neko test
+  # Build cpp binary and test
   - haxe build-cpp.hxml
   - ./Run
 
