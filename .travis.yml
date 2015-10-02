@@ -8,6 +8,9 @@ matrix:
     - os: osx
 
 script:
+  - haxelib install hxcpp
+  - make
+  - mv ndll/Linux64/hxssl.ndll ~/neko/
   - cd test
   - haxe build-neko.hxml
   - neko test
