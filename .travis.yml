@@ -14,9 +14,9 @@ script:
   - make
   - if [ "${TRAVIS_OS_NAME}" = "linux" ]; then
       mv ndll/Linux64/hxssl.ndll ~/neko/;
-	elif [ "${TRAVIS_OS_NAME}" = "osx" ]; then
-	  mv ndll/Mac64/hxssl.ndll ~/neko/;
-	fi
+    elif [ "${TRAVIS_OS_NAME}" = "osx" ]; then
+      mv ndll/Mac64/hxssl.ndll ~/neko/;
+    fi
   - cd test
   - haxe build-neko.hxml
   - neko test
