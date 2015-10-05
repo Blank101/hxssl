@@ -389,7 +389,7 @@ class Http {
 				#else
 				sock = new sys.ssl.Socket();
 				#end
-				Reflect.callMethod(sock, Reflect.field(sock, "setHostname"), [host]);
+				untyped sock.setHostname(host);
 				#else
 				throw "Https is only supported with -lib hxssl";
 				#end
