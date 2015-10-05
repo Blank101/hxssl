@@ -376,6 +376,7 @@ class Http {
 			return;
 		}
 		var secure = (url_regexp.matched(1) == "https://");
+		var host = url_regexp.matched(2);
 		if( sock == null ) {
 			if( secure ) {
 				#if php
@@ -395,7 +396,6 @@ class Http {
 			} else
 				sock = new Socket();
 		}
-		var host = url_regexp.matched(2);
 		var portString = url_regexp.matched(3);
 		var request = url_regexp.matched(4);
 		if( request == "" )
