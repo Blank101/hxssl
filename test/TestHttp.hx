@@ -22,7 +22,9 @@ class TestHttp extends haxe.unit.TestCase {
 	
 	public function test_https_valid_cert() {
 		// Test a valid https certificate
-		haxe.Http.requestUrl("https://www.google.com/");
+		//haxe.Http.requestUrl("https://www.google.com/");
+		var socket = new sys.ssl.Socket();
+		socket.connect( new sys.net.Host( "www.google.com" ), 443 );
 		assertTrue( true );
 	}
 	
