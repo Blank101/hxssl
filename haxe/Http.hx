@@ -385,11 +385,10 @@ class Http {
 				#elseif hxssl
 				#if neko
 				sock = new neko.tls.Socket();
-				sock.setHostname(host);
 				#else
 				sock = new sys.ssl.Socket();
-				sock.setHostname(host);
 				#end
+				Reflect.callMethod(sock, Reflect.field(sock, "setHostname"), [host]);
 				#else
 				throw "Https is only supported with -lib hxssl";
 				#end
