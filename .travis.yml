@@ -1,6 +1,7 @@
 language: haxe
 
-haxe: development
+haxe:
+  - development
 
 sudo: false
 addons:

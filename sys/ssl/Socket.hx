@@ -179,10 +179,10 @@ class Socket {
 			var sbio = BIO_new_socket( __s, BIO_NOCLOSE() );
 			SSL_set_bio( ssl, sbio, sbio );
 			if( validateCert )
-				SSL_set_tlsext_host_name( ssl, untyped verifyHostname.__s );
+				SSL_set_tlsext_host_name( ssl, verifyHostname );
 			var r : Int = SSL_connect( ssl );
 			if( validateCert )
-				validate_hostname( ssl, untyped verifyHostname.__s );
+				validate_hostname( ssl, verifyHostname );
 		} catch( s : String ) {
 			if( s == "std@socket_connect" )
 				throw "Failed to connect on "+(try host.reverse() catch(e:Dynamic) host.toString())+":"+port;
